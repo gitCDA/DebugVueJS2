@@ -5344,13 +5344,7 @@ Vue.component('example-component', {
     };
   },
   methods: {
-    updateMessage: function updateMessage() {
-      this.message = 'updated';
-      console.log(this.$el.textContent); // => 'not updated'
-      this.$nextTick(function () {
-        console.log(this.$el.textContent); // => 'updated'
-      });
-    }
+    updateMessage: function updateMessage() {}
   }
 });
 // Vue.component('add-to-cart', require('./components/AddToCart.vue').default);

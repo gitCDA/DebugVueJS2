@@ -38,11 +38,7 @@
         },
         methods: {
           updateMessage: function () {
-            this.message = 'updated'
-            console.log(this.$el.textContent) // => 'not updated'
-            this.$nextTick(function () {
-              console.log(this.$el.textContent) // => 'updated'
-            })
+            
           }
         }
       },

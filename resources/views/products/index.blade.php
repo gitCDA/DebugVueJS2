@@ -19,7 +19,7 @@
                         <div class="bg-white">
                             <div class="flex items-center justify-between px-4 pt-4">
                                 <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700">{{ $product->price }}</p>
+                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700">{{ $product->formatted_price }}</p>
                                 </div>
                             </div>
                             <div class="p-4">
@@ -31,7 +31,7 @@
 
                                 <p tabindex="0" class="focus:outline-none text-xs text-gray-600 mt-2">{{ $product->description }}</p>
 
-                                <example-component :product-id="{{ $product->id }}"></example-component>
+                                <example-component v-bind:product-id="{{ $product->id }}"></example-component>
                                 
                             </div>
                         </div>

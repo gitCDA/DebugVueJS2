@@ -18,15 +18,15 @@ class Product extends Model
             ->withPivot('total_quantity', 'total_price');
     }
 
-    public function price(): Attribute
-    {
-        return Attribute::get(
-            fn ($value) => str_replace('.', ',', $value / 100) . '€'
-        );
-    }
+    // public function price(): Attribute
+    // {
+    //     return Attribute::get(
+    //         fn ($value) => str_replace('.', ',', $value / 100) . '€'
+    //     );
+    // }
 
-// public function getFormattedPriceAttribute(): string
-// {
-//     return str_replace('.', ',', $this->price / 100) . ' €';
-// }
+    public function getFormattedPriceAttribute(): string
+    {
+        return str_replace('.', ',', $this->price / 100) . ' €';
+    }
 }

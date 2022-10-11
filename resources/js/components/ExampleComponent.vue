@@ -1,25 +1,23 @@
 <template>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Example Component</div>
 
-    <div class="flex items-center justify-between py-4">
-        <button class="bg-black text-white p-2"
-            v-on:click.prevent="addToCart"
-            type="button">
-            Ajouter au panier
-        </button>
+                    <div class="card-body">
+                        I'm an example component.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
 </template>
 
-<script setup>
-
-    const addToCart = () => {
-        console.log('added');
+<script>
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        }
     }
-
-    // export default {
-    //     addToCart() {
-    //         console.log('Component mounted.')
-    //     }
-    // }
-    
 </script>

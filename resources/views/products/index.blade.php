@@ -31,7 +31,7 @@
 
                                 <p tabindex="0" class="focus:outline-none text-xs text-gray-600 mt-2">{{ $product->description }}</p>
 
-                                <example-component v-bind:product-id="{{ $product->id }}"></example-component>
+                                <add-to-cart :product-id="{{ $product->id }}"></add-to-cart>
                                 
                             </div>
                         </div>

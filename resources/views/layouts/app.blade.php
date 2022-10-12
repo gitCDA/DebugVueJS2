@@ -18,8 +18,8 @@
         <script src="{{mix('js/app.js')}}" defer ></script>
 
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100" id="app">
+    <body class="font-sans antialiased" id="app">
+        <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
             
             <!-- Page Heading -->

@@ -1,10 +1,11 @@
 <template>
+
     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex mr-10">
-        <a href="/shoppingCart" class="relative">
+        <a href="/ShoppingCart" class="relative">
 
             <span class="absolute -top-1 left-4 rounded-full bg-indigo-700
             w-5 h-5 text-xs text-white flex items-center
-            justify-center">{{ this.cartCount }}</span>
+            justify-center">{{ cartCount }}</span>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-sm
             font-medium leading-5 text-gray-600 " fill="none" viewBox="0 0 24 24"
             stroke="currentColor" stroke-width="2">
@@ -14,43 +15,22 @@
             
         </a>
     </div>
+
 </template>
 
-<script>
+<script setup>
 
-    // import { count } from 'console';
-    // import { onMounted, ref } from 'vue';
-    // const cartCount = ref(0);
-    
-    // onMounted( async () => {
-        //     // await axios.get('/sanctum/csrf-cookie');
-        //     // let response = await axios.get('/api/cart/count');
-        //     // cartCount.value = response.data.count;
-        //     this.cartCount.value = await getCount();
-        //     console.log(this.cartCount.value);
-        // })
-        
-    import useProduct from '../composables/products/index.js';
-    const { getCount } = useProduct(); 
-    const emitter = require('tiny-emitter/instance');
-    this.emitter('cartCountUpdated', (count) => this.cartCount = count);
-    // emitter.on('cartCountUpdated', (count) => this.cartCount = count);
-    
-    export default {
-        props: {
-            cartCount: {
-                type: Number,
-                default: 0,
-            },
-            emitter: {
-                
-            }
-        },
-        
-        methods: {
-        },
-        async mounted() {
-            this.cartCount = await getCount();
-        },
-    }
+import { onMounted, ref } from 'vue';
+import useProduct from '../composables/products';
+
+const { getCount } = useProduct();
+const cartCount = ref(0);
+
+const emitter = require('tiny-emitter/instance');
+emitter.on('cartCountUpdated', (count) => cartCount.value = count);
+
+onMounted(async() => {
+    cartCount.value = await getCount();
+});
+
 </script>

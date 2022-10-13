@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
+use App\Http\Controllers\StripeCheckoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,9 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Pour aller dans la partie paiement Stripe
+Route::get('/checkout', [StripeCheckoutController::class, 'create']);
+Route::post('/paymentIntent', [StripeCheckoutController::class, 'paymentIntent']);
+
+// Pour aller dans le panier
 Route::get('ShoppingCart', ShoppingCartController::class)
     ->name('cart.index');
 
+// Pour afficher la page des produits
 Route::get('products', [ProductController::class, 'index'])
     ->name('products.index');
 

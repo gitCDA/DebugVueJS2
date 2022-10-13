@@ -39,6 +39,7 @@ import { createApp } from 'vue';
 import AddToCart from './components/AddToCart.vue';
 import NavbarCart from './components/NavbarCart.vue';
 import ShoppingCart from './components/ShoppingCart.vue';
+import StripeCheckout from './components/StripeCheckout.vue';
 
 
 window.Alpine = Alpine;
@@ -54,5 +55,7 @@ app.component('AddToCart', AddToCart);
 app.component('NavbarCart', NavbarCart);
 
 app.component('ShoppingCart', ShoppingCart);
+
+app.component('StripeCheckout', StripeCheckout);
 
 app.mount('#app');

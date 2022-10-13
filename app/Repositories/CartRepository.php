@@ -60,6 +60,25 @@ class CartRepository
         \Cart::session(auth()->user()->id)->remove($id);
     }
 
+    public function total()
+    {
+        return \Cart::session(auth()->user()->id)->getTotal();
+    }
+
+    public function jsonOrderItems()
+    {
+        $this
+            ->content()
+            ->map(function ($item) {
+                return [
+                    'name' => $item->name,
+                    'quantity' => $item->quantity,
+                    'price' => $item->price,
+                ];
+            })
+            ->toJson();
+    }
+
 
     // Compter le nombre d'articles
     public function count()

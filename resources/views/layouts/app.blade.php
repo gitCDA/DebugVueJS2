@@ -16,6 +16,7 @@
         <!-- Scripts -->
         {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
         <script src="{{mix('js/app.js')}}" defer ></script>
+        <script src="https://js.stripe.com/v3/"></script>
 
     </head>
     <body class="font-sans antialiased" id="app">

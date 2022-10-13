@@ -6,7 +6,7 @@
       </div>
       <button id="submit">
         <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Pay now</span>
+        <span id="button-text">Payer dès maintenant</span>
       </button>
       <div id="payment-message" class="hidden"></div>
     </form>
@@ -14,15 +14,33 @@
 </template>
 
 <script setup>
+    import { ref } from "vue";
     import { onMounted } from 'vue';
-    import useStripe from '../composables/stripe';
+    // import useStripe from '../composables/stripe';
 
-    const {
-        initialize
-    } = useStripe();
+    // const {
+    //     initialize,
+    // } = useStripe();
 
     onMounted(() => {
-        await initialize();    
+        const elements = ref(null);
+
+        const initialize = async() => {
+            const stripe = Stripe(process.env.MIX_STRIPE_TEST_PUBLIC_KEY);
+
+            const clientSecret = await axios.post('/paymentIntent')
+                .then(r => r.data.clientSecret)
+                .catch(err => console.log(err));
+            
+                elements.value = stripe.elements({ clientSecret });
+                
+                const paymentElement = elements.value.create("payment");
+                paymentElement.mount("#payment-element");
+        }
+        
+        return {
+            initialize,
+        }
     })
 
 </script>

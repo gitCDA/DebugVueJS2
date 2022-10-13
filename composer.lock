@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1ec39e04bef842cd4ed91b9b560f917",
+    "content-hash": "34149866ade2ddf959d7a0bd39a67918",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2994,16 +2994,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v9.6.0",
+            "version": "v8.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "7c43066015d03ad9c4458db683ecfe019ce225da"
+                "reference": "01d87fed82d624d3261cf9a302419c7581e05a60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/7c43066015d03ad9c4458db683ecfe019ce225da",
-                "reference": "7c43066015d03ad9c4458db683ecfe019ce225da",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/01d87fed82d624d3261cf9a302419c7581e05a60",
+                "reference": "01d87fed82d624d3261cf9a302419c7581e05a60",
                 "shasum": ""
             },
             "require": {
@@ -3014,7 +3014,6 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "3.5.0",
-                "php-coveralls/php-coveralls": "^2.5",
                 "phpstan/phpstan": "^1.2",
                 "phpunit/phpunit": "^5.7 || ^9.0",
                 "squizlabs/php_codesniffer": "^3.3"
@@ -3049,9 +3048,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v9.6.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v8.3.0"
             },
-            "time": "2022-09-15T19:45:46+00:00"
+            "time": "2022-05-23T19:57:31+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

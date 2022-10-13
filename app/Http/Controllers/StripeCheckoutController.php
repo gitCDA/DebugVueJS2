@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use App\Repositories\CartRepository;
 use Illuminate\Http\Request;
 
+
 class StripeCheckoutController extends Controller
 {
     public function create()
     {
         return view('checkout.create');
     }
-
+    
     public function paymentIntent()
     {
+        
+        require_once('vendor/autoload.php');
         // This is your test secret API key.
         \Stripe\Stripe::setApiKey(config('stripe.test_secret_key'));
 
@@ -27,12 +30,13 @@ class StripeCheckoutController extends Controller
             $jsonObj = json_decode($jsonStr);
 
             // Create a PaymentIntent with amount and currency
-            $paymentIntent = \Stripe\PaymentIntent::create([
-                'amount' => $cartTotal,
-                'currency' => 'eur',
-                'automatic_payment_methods' => [
-                    'enabled' => true,
-                ],
+                // $stripe = new \Stripe\PaymentIntent('sk_test_BQokikJOvBiI2HlWgH4olfQ2');
+                $paymentIntent = \Stripe\PaymentIntent::create([
+                    'amount' => $cartTotal,
+                    'currency' => 'eur',
+                    'automatic_payment_methods' => [
+                        'enabled' => true,
+                    ],
                 'metadata' => [
                     'order_items' => (new CartRepository())->jsonOrderItems()
                 ],
@@ -43,9 +47,10 @@ class StripeCheckoutController extends Controller
             ];
 
             echo json_encode($output);
+            
         } catch (Error $e) {
             http_response_code(500);
             echo json_encode(['error' => $e->getMessage()]);
         }
-            }
+    }
 }

@@ -6,18 +6,19 @@ export default function useStripe() {
     const elements = ref(null);
 
     const initialize = async() => {
-        const stripe = Stripe(process.env.M)
+        const stripe = Stripe(process.env.MIX_STRIPE_TEST_PUBLIC_KEY);
 
-        const clientSecret = axios.post('/paymentIntent')
-            .then((result) => {
-                console.log(result)
-            }).catch((err) => {
-                console.log(err)
-            });
+        const clientSecret = await axios.post('/paymentIntent')
+            .then(r => r.data.clientSecret)
+            .catch(err => console.log(err));
         
-        elements.value = stripe.elements({ clientSecret });
-        
-        //   const paymentElement = elements.create("payment");
-        //   paymentElement.mount("#payment-element");
+            elements.value = stripe.elements({ clientSecret });
+            
+            const paymentElement = elements.value.create("payment");
+            paymentElement.mount("#payment-element");
+    }
+
+    return {
+        initialize,
     }
 }

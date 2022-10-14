@@ -21,12 +21,12 @@
     // const {
     //     initialize,
     // } = useStripe();
+    const elements = ref(null);
+    const stripe = Stripe(process.env.MIX_STRIPE_TEST_PUBLIC_KEY);
 
     onMounted(() => {
-        const elements = ref(null);
 
         const initialize = async() => {
-            const stripe = Stripe(process.env.MIX_STRIPE_TEST_PUBLIC_KEY);
 
             const clientSecret = await axios.post('/paymentIntent')
                 .then(r => r.data.clientSecret)
@@ -35,12 +35,15 @@
                 elements.value = stripe.elements({ clientSecret });
                 
                 const paymentElement = elements.value.create("payment");
+                console.log(paymentElement);
                 paymentElement.mount("#payment-element");
         }
         
         return {
             initialize,
         }
+
+        initialize();
     })
 
 </script>

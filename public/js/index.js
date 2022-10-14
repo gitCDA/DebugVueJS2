@@ -22697,20 +22697,23 @@ function useStripe() {
           switch (_context.prev = _context.next) {
             case 0:
               stripe = Stripe("pk_test_51LsQNfIItjyC3Pz6PY2DM8CYsYzjaZR82jmqISXigWtl");
-              _context.next = 3;
-              return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/paymentIntent').then(function (r) {
+              console.log(stripe);
+              _context.next = 4;
+              return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/paymentIntent');
+            case 4:
+              clientSecret = _context.sent;
+              console.log(clientSecret).then(function (r) {
                 return r.data.clientSecret;
               })["catch"](function (err) {
                 return console.log(err);
               });
-            case 3:
-              clientSecret = _context.sent;
               elements.value = stripe.elements({
                 clientSecret: clientSecret
               });
               paymentElement = elements.value.create("payment");
+              console.log(paymentElement);
               paymentElement.mount("#payment-element");
-            case 7:
+            case 10:
             case "end":
               return _context.stop();
           }

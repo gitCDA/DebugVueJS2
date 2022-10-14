@@ -25087,28 +25087,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
+    var elements = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
+    var stripe = Stripe("pk_test_51LsQNfIItjyC3Pz6PY2DM8CYsYzjaZR82jmqISXigWtl");
     (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
-      var elements = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(null);
       var initialize = /*#__PURE__*/function () {
         var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-          var stripe, clientSecret, paymentElement;
+          var clientSecret, paymentElement;
           return _regeneratorRuntime().wrap(function _callee$(_context) {
             while (1) {
               switch (_context.prev = _context.next) {
                 case 0:
-                  stripe = Stripe("pk_test_51LsQNfIItjyC3Pz6PY2DM8CYsYzjaZR82jmqISXigWtl");
-                  _context.next = 3;
+                  _context.next = 2;
                   return axios.post('/paymentIntent').then(function (r) {
                     return r.data.clientSecret;
                   })["catch"](function (err) {
                     return console.log(err);
                   });
-                case 3:
+                case 2:
                   clientSecret = _context.sent;
                   elements.value = stripe.elements({
                     clientSecret: clientSecret
                   });
                   paymentElement = elements.value.create("payment");
+                  console.log(paymentElement);
                   paymentElement.mount("#payment-element");
                 case 7:
                 case "end":
@@ -25124,8 +25125,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return {
         initialize: initialize
       };
+      initialize();
     });
     var __returned__ = {
+      elements: elements,
+      stripe: stripe,
       ref: vue__WEBPACK_IMPORTED_MODULE_0__.ref,
       onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted
     };
@@ -61627,7 +61631,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Toaster_vue_vue_type_template_id_04d22544__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Toaster.vue?vue&type=template&id=04d22544 */ "./node_modules/@meforma/vue-toaster/src/Toaster.vue?vue&type=template&id=04d22544");
 /* harmony import */ var _Toaster_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Toaster.vue?vue&type=script&lang=js */ "./node_modules/@meforma/vue-toaster/src/Toaster.vue?vue&type=script&lang=js");
 /* harmony import */ var _Toaster_vue_vue_type_style_index_0_id_04d22544_lang_stylus__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Toaster.vue?vue&type=style&index=0&id=04d22544&lang=stylus */ "./node_modules/@meforma/vue-toaster/src/Toaster.vue?vue&type=style&index=0&id=04d22544&lang=stylus");
-/* harmony import */ var C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -61635,7 +61639,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Toaster_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Toaster_vue_vue_type_template_id_04d22544__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"node_modules/@meforma/vue-toaster/src/Toaster.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Toaster_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Toaster_vue_vue_type_template_id_04d22544__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"node_modules/@meforma/vue-toaster/src/Toaster.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -61855,13 +61859,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddToCart.vue?vue&type=template&id=2e1e1c61 */ "./resources/js/components/AddToCart.vue?vue&type=template&id=2e1e1c61");
 /* harmony import */ var _AddToCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddToCart.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/AddToCart.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddToCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/AddToCart.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_AddToCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_AddToCart_vue_vue_type_template_id_2e1e1c61__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/AddToCart.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -61883,13 +61887,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _NavbarCart_vue_vue_type_template_id_1e8e07fb__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NavbarCart.vue?vue&type=template&id=1e8e07fb */ "./resources/js/components/NavbarCart.vue?vue&type=template&id=1e8e07fb");
 /* harmony import */ var _NavbarCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NavbarCart.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/NavbarCart.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_NavbarCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_NavbarCart_vue_vue_type_template_id_1e8e07fb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/NavbarCart.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_NavbarCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_NavbarCart_vue_vue_type_template_id_1e8e07fb__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/NavbarCart.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -61911,13 +61915,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _ShoppingCart_vue_vue_type_template_id_c86466da__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ShoppingCart.vue?vue&type=template&id=c86466da */ "./resources/js/components/ShoppingCart.vue?vue&type=template&id=c86466da");
 /* harmony import */ var _ShoppingCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ShoppingCart.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/ShoppingCart.vue?vue&type=script&setup=true&lang=js");
-/* harmony import */ var C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ShoppingCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ShoppingCart_vue_vue_type_template_id_c86466da__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ShoppingCart.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_ShoppingCart_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_ShoppingCart_vue_vue_type_template_id_c86466da__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/ShoppingCart.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -61940,7 +61944,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _StripeCheckout_vue_vue_type_template_id_ca6d6344_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./StripeCheckout.vue?vue&type=template&id=ca6d6344&scoped=true */ "./resources/js/components/StripeCheckout.vue?vue&type=template&id=ca6d6344&scoped=true");
 /* harmony import */ var _StripeCheckout_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StripeCheckout.vue?vue&type=script&setup=true&lang=js */ "./resources/js/components/StripeCheckout.vue?vue&type=script&setup=true&lang=js");
 /* harmony import */ var _StripeCheckout_vue_vue_type_style_index_0_id_ca6d6344_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StripeCheckout.vue?vue&type=style&index=0&id=ca6d6344&scoped=true&lang=css */ "./resources/js/components/StripeCheckout.vue?vue&type=style&index=0&id=ca6d6344&scoped=true&lang=css");
-/* harmony import */ var C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -61948,7 +61952,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_www_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_StripeCheckout_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StripeCheckout_vue_vue_type_template_id_ca6d6344_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-ca6d6344"],['__file',"resources/js/components/StripeCheckout.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_x_CDA_laravel_DebugVueJS2_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_StripeCheckout_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_StripeCheckout_vue_vue_type_template_id_ca6d6344_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-ca6d6344"],['__file',"resources/js/components/StripeCheckout.vue"]])
 /* hot reload */
 if (false) {}
 

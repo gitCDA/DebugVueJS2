@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Api\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
 use App\Http\Controllers\StripeCheckoutController;
@@ -20,13 +22,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Page de paiement validé
+Route::get('/merci', fn() => 'merci pour votre commande');
+
 // Pour aller dans la partie paiement Stripe
 Route::get('/checkout', [StripeCheckoutController::class, 'create']);
 Route::post('/paymentIntent', [StripeCheckoutController::class, 'paymentIntent']);
 
+// Enregistrer les commandes
+Route::post('/saveOrder', OrderController::class)
+    ->name('orders.save');
+
 // Pour aller dans le panier
 Route::get('ShoppingCart', ShoppingCartController::class)
-    ->name('cart.index');
+->name('cart.index');
 
 // Pour afficher la page des produits
 Route::get('products', [ProductController::class, 'index'])

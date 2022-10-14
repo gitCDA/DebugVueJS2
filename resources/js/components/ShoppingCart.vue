@@ -40,21 +40,21 @@
                     <div class="w-20 h-10">
                         <div class="relative flex flex-row w-full h-8">
                             <button
-                                v-on:click.prevent="decrease(product.id)"
-                            >
-                            -
-                            </button>
-                        <input
-                            readonly
-                            :value="product.quantity"
-                        class="w-full font-semibold text-center text-gray-700
-                        bg-gray-200 outline-none focus:outline-none hover:text-black
-                        focus:text-black mx-3" />
-                            <button
-                                v-on:click.prevent="increase(product.id)"
+                              v-on:click.prevent="increase(product.id)"
                             >
                             +
-                            </button>
+                          </button>
+                          <input
+                          readonly
+                          :value="product.quantity"
+                          class="w-full font-semibold text-center text-gray-700
+                          bg-gray-200 outline-none focus:outline-none hover:text-black
+                          focus:text-black mx-3" />
+                          <button
+                            v-on:click.prevent="decrease(product.id)"
+                          >
+                          -
+                        </button>
                     </div>
                     </div>
                     </td>

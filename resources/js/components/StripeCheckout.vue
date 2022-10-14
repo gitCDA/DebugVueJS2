@@ -4,7 +4,10 @@
       <div id="payment-element">
         <!--Stripe.js injects the Payment Element-->
       </div>
-      <button id="submit">
+      <button
+        id="submit"
+        v-on:click.prevent="handleSubmit"
+      >
         <div class="spinner hidden" id="spinner"></div>
         <span id="button-text">Payer dès maintenant</span>
       </button>
@@ -14,36 +17,20 @@
 </template>
 
 <script setup>
-    import { ref } from "vue";
     import { onMounted } from 'vue';
-    // import useStripe from '../composables/stripe';
+    import useStripe from '../composables/stripe';
 
-    // const {
-    //     initialize,
-    // } = useStripe();
-    const elements = ref(null);
-    const stripe = Stripe(process.env.MIX_STRIPE_TEST_PUBLIC_KEY);
+    const {
+        initialize,
+        checkStatus,
+        handleSubmit,
+    } = useStripe();
 
     onMounted(() => {
 
-        const initialize = async() => {
-
-            const clientSecret = await axios.post('/paymentIntent')
-                .then(r => r.data.clientSecret)
-                .catch(err => console.log(err));
-            
-                elements.value = stripe.elements({ clientSecret });
-                
-                const paymentElement = elements.value.create("payment");
-                console.log(paymentElement);
-                paymentElement.mount("#payment-element");
-        }
-        
-        return {
-            initialize,
-        }
-
         initialize();
+        checkStatus();
+
     })
 
 </script>

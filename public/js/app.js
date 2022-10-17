@@ -25620,10 +25620,11 @@ function useStripe() {
             case 10:
               showMessage("Paiement réussi!");
               //   Redirection quand le paiement est validé
-              window.location = 'http://127.0.0.1:8000/dashboard';
-              _context3.next = 14;
+              _context3.next = 13;
               return (0,_helpers__WEBPACK_IMPORTED_MODULE_2__.saveOrder)();
-            case 14:
+            case 13:
+              // console.log(paymentIntent)
+              window.location = 'http://127.0.0.1:8000/dashboard';
               return _context3.abrupt("break", 21);
             case 15:
               showMessage("Your payment is processing.");
@@ -25712,7 +25713,7 @@ var saveOrder = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.next = 2;
-            return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/orders');
+            return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/saveOrder');
           case 2:
           case "end":
             return _context.stop();

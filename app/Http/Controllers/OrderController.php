@@ -10,7 +10,7 @@ class OrderController extends Controller
     public function __invoke()
     {
         $order = auth()->user()->orders()->create([
-            'order_number' => uniqid()
+            'order_number' => uniqid(),
         ]);
 
         (new CartRepository())

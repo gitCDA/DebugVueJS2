@@ -12,11 +12,12 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+                <div class="p-6 bg-white border-b border-gray-200 grid gap-10">
                     @forelse ($orders as $order)
-                    <table class="table-auto w-full">
+                    <table class="table-auto w-full border">
                         <thead class="border-b">
-                            <h2>Commande n° {{ $order->order_number }} passée le {{ $order->created_at->format('d M Y') }}</h2>
+                            <h2 class="text-2xl">Commande n° {{ $order->order_number }}
+                                passée le {{ $order->created_at->format('d M Y') }}</h2>
                         </thead>
                         <tbody>
                            <tr class="border-b hover:bg-gray-50">

@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ShoppingCartController;
@@ -30,8 +29,8 @@ Route::get('/checkout', [StripeCheckoutController::class, 'create']);
 Route::post('/paymentIntent', [StripeCheckoutController::class, 'paymentIntent']);
 
 // Enregistrer les commandes
-Route::post('/saveOrder', OrderController::class)
-    ->name('orders.save');
+Route::post('/saveOrder', OrderController::class);
+    // ->name('orders.save');
 
 // Pour aller dans le panier
 Route::get('ShoppingCart', ShoppingCartController::class)

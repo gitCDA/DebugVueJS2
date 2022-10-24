@@ -9,8 +9,8 @@ class OrderController extends Controller
 {
     public function __invoke()
     {
-        $order = auth()->user()->orders()->create([
-            'order_number' => uniqid()
+        $order = auth()->user()->order()->create([
+            'order_number' => uniqid(),
         ]);
 
         (new CartRepository())
@@ -22,6 +22,6 @@ class OrderController extends Controller
                 ]);
             });
 
-        (new CartRepository())->clear();
+            (new CartRepository())->clear();
     }
 }

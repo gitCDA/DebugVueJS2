@@ -62,8 +62,9 @@ export default function useStripe() {
             case "succeeded":
               showMessage("Paiement réussi!");
             //   Redirection quand le paiement est validé
-              window.location = 'http://127.0.0.1:8000/dashboard'
+            // window.location = 'http://127.0.0.1:8000/merci'
               await saveOrder();
+              window.location = 'http://127.0.0.1:8000/dashboard'
               break;
             case "processing":
               showMessage("Your payment is processing.");

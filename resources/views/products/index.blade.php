@@ -13,13 +13,13 @@
                     @foreach ($products as $product)
                     <!-- Card 1 -->
                     <div tabindex="0" class="focus:outline-none mx-2 w-72">
-                        <div>
-                            <img alt="person capturing an image" src="{{ $product->image }}" tabindex="0" class="focus:outline-none w-full h-44" />
+                        <div class=" rounded-3xl border-2 border-gray-500 mb-1">
+                            <img alt="person capturing an image" src="{{ $product->image }}" tabindex="0" class="focus:outline-none w-full h-44 rounded-3xl" />
                         </div>
-                        <div class="bg-white">
+                        <div class="bg-white rounded-3xl border-2 border-green-500">
                             <div class="flex items-center justify-between px-4 pt-4">
-                                <div class="bg-yellow-200 py-1.5 px-6 rounded-full">
-                                    <p tabindex="0" class="focus:outline-none text-xs text-yellow-700">{{ $product->formatted_price }}</p>
+                                <div class="bg-blue-500 py-1.5 px-6 rounded-full">
+                                    <p tabindex="0" class="focus:outline-none text-xs text-white">{{ $product->formatted_price }}</p>
                                 </div>
                             </div>
                             <div class="p-4">
